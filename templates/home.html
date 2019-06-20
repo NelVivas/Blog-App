@@ -6,8 +6,7 @@
         {% for post in object_list %}
         
             <div class="post-entry">
-                <h2 > <a href = "{% url 'post_detail' post.pk %}" id = "post-title"> {{ post.title }} </a> </h2>
-                <hr>
+                <h2> <a href = "{% url 'post_detail' post.pk %}" > {{ post.title }} </a> </h2>
                 <p id = "content"> {{ post.body }} </p>
             </div>
 

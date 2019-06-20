@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.urls import reverse
 # Create your models here.
 
 
@@ -7,11 +7,12 @@ class Post(models.Model):
     """Model definition for Post."""
 
     # TODO: Define fields here
-    title = models.CharField(max_length=200)
     author = models.ForeignKey(
         'auth.User',
         on_delete=models.CASCADE,
     )
+    title = models.CharField(max_length=200)
+    
     body = models.TextField()
 
     class Meta:
@@ -23,3 +24,6 @@ class Post(models.Model):
     def __str__(self):
         """Unicode representation of Post."""
         return self.title
+
+    def get_absolute_url(self):
+        return reverse('post_detail', args = [str( self.id )])
