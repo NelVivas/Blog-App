@@ -13,6 +13,11 @@ p {
 #title{
     color: #039be5;
 }
+
+header{
+    display: flex;
+}
+
 .nav-left{
     margin-right: auto;
 }
