@@ -4,11 +4,18 @@
 {% block content %}
     <div class="post-entry">
         <h2 id = "post-title"> {{ post.title }} </h2>
-        <p id = "content"> {{ post.body }} </p>
+        <p> Author: {{post.author}} </p>
+        <p style="font-size: 18px;" id = "content"> {{ post.body }} </p>
     </div>
 
 
-    <a href=" {% url 'post_edit' post.pk %} " >- Edit Blog Post </a>
-    <a href=" {% url 'post_delete' post.pk %} "> - Delete Blog Post </a>
+    <button type="button" class="btn btn-secondary">
+        <a href=" {% url 'post_edit' post.pk %} " style="color: white; text-decoration: none;"> Edit Blog Post </a>
+    </button>
+    
+    
+    <button type="button" class="btn btn-danger">
+        <a href=" {% url 'post_delete' post.pk %}" style="color: white; text-decoration: none;"> Delete Blog Post </a>
+    </button>
 {% endblock content %}
    

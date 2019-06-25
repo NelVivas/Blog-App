@@ -7,6 +7,12 @@
 
         <link href=" {% static 'css/base.css' %}" rel = "stylesheet">
 
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" 
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+        crossorigin="anonymous">
+
     </head>
     <body>
 
@@ -14,18 +20,44 @@
           
             <header>
                 <div class="nav-left">
-                    <h1> <a id = "title" href = "/"> Django blog </a> </h1>
+                    <h1> <a id = "title" href = "/" style="text-decoration: none;"> Django blog </a> </h1>
                 </div>
-                <div class="nav-right">
-                    <a href=" {% url 'post_new' %} "> + New Blog Post </a>
-                </div>
+    
             </header>
             <hr>
             
             {% block content %}
                 
             {% endblock content %}
+            <div class="float-right">
+  
+                <button type="button" class="btn btn-danger btn-circle" style="width: 50px;
+                height: 50px;
+                text-align: center;
+                padding: 6px 0;
+                font-size: 12px;
+                position: absolute;
+                bottom: 10px;
+                right: 10px;
+                line-height: 1.428571429;
+                border-radius: 35px;">
+                        <a href = "{% url 'post_new' %}" > 
+                                <img src = "{% static 'images/add-btn.png' %}" > 
+                            </a>
+                </button>
                 
+
+            </div>
+      
+            
+            
+            
         </div>
     </body>
+
+      <!-- Compiled and minified JavaScript -->
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+            
 </html>
