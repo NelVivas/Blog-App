@@ -5,14 +5,21 @@
     <div class="row ">
         {% for post in object_list %}
                 
-            <div class="col-md-4-sm-6-lg-6">
+            <div class="col col-sm-12  col-lg-6 "
+                  style = "padding-bottom: 20px;
+                         ">
                             
                 <div class="card" style="width: 18rem;">
                     <div class="card-body">
-                        <h5 class="card-title">{{post.title}}</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">Author  {{post.author}} </h6>
-                        <p class="card-text">{{post.body}}</p>
-                         <a href="{% url 'post_detail' post.pk %}" class="card-link">Check post</a>
+                        <h5 class="card-title" style="text-align: center;">{{post.title}}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted" style="text-align: center;">Author  {{post.author}} </h6>
+                        <p class="card-text" style="text-align: center;">{{post.body}}</p>
+                        <button type="button" class="btn btn-primary">
+                             <a href="{% url 'post_detail' post.pk %}"
+                                style="text-decoration: none;
+                                       color: white;
+                                       padding-top: 10px;"> Check post </a> 
+                        </button>
                     </div>
                 </div>
             
